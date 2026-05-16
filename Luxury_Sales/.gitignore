@@ -1,0 +1,13 @@
+# Archivos basura de Mac
+.DS_Store
+**/.DS_Store
+
+# Archivos temporales de Spring Boot en CUALQUIER microservicio
+**/target/
+**/.settings/
+**/.classpath
+**/.project
+**/.factorypath
+
+# Configuración local de VS Code
+.vscode/

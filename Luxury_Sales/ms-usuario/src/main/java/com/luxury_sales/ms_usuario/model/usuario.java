@@ -10,7 +10,7 @@ import lombok.Data; // crea los getters y setters  automaticamente
 
 
 
-public class usuario {
+public class Usuario {
     @Id //define que este  campo es el id inico
     @GeneratedValue (strategy =GenerationType.IDENTITY) //oracle asigna el numero 1,2,3...
     private long id;

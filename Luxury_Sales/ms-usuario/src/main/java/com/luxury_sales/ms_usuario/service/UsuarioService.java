@@ -1,6 +1,6 @@
 package com.luxury_sales.ms_usuario.service; //a quie esta la inteligencia y la logica de negocio 
 
-import com.luxury_sales.ms_usuario.model.usuario;
+import com.luxury_sales.ms_usuario.model.Usuario;
 import com.luxury_sales.ms_usuario.repository.usuarioRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -17,7 +17,7 @@ public class UsuarioService {
     
     private final usuarioRepository UsuarioRepository;
     
-    public List <usuario> obtnerUsuarios () {
+    public List <Usuario> obtnerUsuarios () {
         return UsuarioRepository.findAll();
 
     }
@@ -25,13 +25,13 @@ public class UsuarioService {
     // GET /api/categorias/{id} para verificar que el
     // id  existe antes de guardar un usuario.
 
-    public  Optional <usuario> optenerPorId (Long id ) {
+    public  Optional <Usuario> optenerPorId (Long id ) {
         return UsuarioRepository.findById(id);
 
 
     }
 
-    public usuario guardar  (usuario Usuario ) {
+    public Usuario guardar  (Usuario Usuario ) {
         return UsuarioRepository.save (Usuario);
 
     }
