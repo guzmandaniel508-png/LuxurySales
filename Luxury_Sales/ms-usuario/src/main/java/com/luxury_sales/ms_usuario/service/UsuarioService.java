@@ -1,47 +1,21 @@
-package com.luxury_sales.ms_usuario.service; //a quie esta la inteligencia y la logica de negocio 
+package com.luxury_sales.ms_usuario.service;
 
-import com.luxury_sales.ms_usuario.model.Usuario;
-import com.luxury_sales.ms_usuario.repository.usuarioRepository;
-import lombok.RequiredArgsConstructor;
-
-import org.springframework.stereotype.Service;
+import com.luxury_sales.ms_usuario.dto.UsuarioRequestDTO;
+import com.luxury_sales.ms_usuario.dto.UsuarioResponseDTO;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-@RequiredArgsConstructor
 
-public class UsuarioService {
+public interface UsuarioService {
 
-    
-    private final usuarioRepository UsuarioRepository;
-    
-    public List <Usuario> obtnerUsuarios () {
-        return UsuarioRepository.findAll();
+    List<UsuarioResponseDTO> obtenerTodos();
 
-    }
-     // Este método es clave: ms-usuario llama al endpoint
-    // GET /api/categorias/{id} para verificar que el
-    // id  existe antes de guardar un usuario.
+    Optional<UsuarioResponseDTO> obtenerPorId(Long id);
 
-    public  Optional <Usuario> optenerPorId (Long id ) {
-        return UsuarioRepository.findById(id);
+    UsuarioResponseDTO guardar(UsuarioRequestDTO dto);
 
+    Optional<UsuarioResponseDTO> actualizar(Long id, UsuarioRequestDTO dto);
 
-    }
-
-    public Usuario guardar  (Usuario Usuario ) {
-        return UsuarioRepository.save (Usuario);
-
-    }
-
-    public void eliminar  (Long id) {
-        UsuarioRepository.deleteById(id);
-    }
-
-
- 
-
-
+    void eliminar(Long id);
 }
