@@ -1,0 +1,30 @@
+package com.luxury_sales.ms_producto.dto;
+
+public class ProductoResponseDTO {
+
+    private Long id;
+    private String nombre;
+    private Double precio;
+    private Integer cantidad;
+
+    // Constructor vacío
+    public ProductoResponseDTO() {}
+
+    // Constructor completo
+    public ProductoResponseDTO(Long id, String nombre, Double precio, Integer cantidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+
+    // Getters y Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public Double getPrecio() { return precio; }
+    public void setPrecio(Double precio) { this.precio = precio; }
+    public Integer getCantidad() { return cantidad; }
+    public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
+}
