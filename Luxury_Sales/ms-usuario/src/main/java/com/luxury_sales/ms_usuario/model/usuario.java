@@ -1,26 +1,25 @@
 package com.luxury_sales.ms_usuario.model;
 
-import jakarta.persistence.*; //herramienta para conectar java con sql
+import jakarta.persistence.*; 
 import lombok.AllArgsConstructor;
-import lombok.Data; // crea los getters y setters  automaticamente
+import lombok.Data; 
 import lombok.NoArgsConstructor;
 
-//anotaciones
-@Entity //le dice a spring :"crea una tabla en la base de datos con esta clase"
-@Table (name = "usuarios")//nombre exacto en tabla en oracle
-@Data // magia de lombok: nos ahorra 50 linea de codigo
-@NoArgsConstructor       // OBLIGATORIO: Crea el constructor vacío para JPA
-@AllArgsConstructor      // OBLIGATORIO: Crea el constructor con (id, username, password) que soluciona el error
 
+@Entity 
+@Table (name = "usuarios")
+@Data 
+@NoArgsConstructor       
+@AllArgsConstructor      
 
 public class Usuario {
-    @Id //define que este  campo es el id inico
-    @GeneratedValue (strategy =GenerationType.IDENTITY) //oracle asigna el numero 1,2,3...
+    @Id 
+    @GeneratedValue (strategy =GenerationType.IDENTITY) 
     private Long id;
 
-    @Column (nullable = false, unique = true ) //no puede estar vacio y no se puede repetir 
+    @Column (nullable = false, unique = true ) 
     private String username;
 
-    @Column (nullable = false) //obligatorio poner clave 
+    @Column (nullable = false) 
     private String password;
 }

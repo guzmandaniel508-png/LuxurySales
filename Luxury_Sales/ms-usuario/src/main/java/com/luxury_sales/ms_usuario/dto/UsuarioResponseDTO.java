@@ -6,9 +6,9 @@ import lombok.Data;
 
 
 public class UsuarioResponseDTO {
-    private Long id;          // Le entregas su ID generado en la base de datos
-    private String username;  // Le entregas su nombre de usuario
-    //  LA PASSWORD NO SE INCLUYE AQUÍ POR SEGURIDAD
+    private Long id;          
+    private String username;  
+    
 
 
 

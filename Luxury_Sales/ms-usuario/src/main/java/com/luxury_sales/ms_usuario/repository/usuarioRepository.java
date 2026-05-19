@@ -1,15 +1,11 @@
-package com.luxury_sales.ms_usuario.repository; // ubicacion del archivo 
+package com.luxury_sales.ms_usuario.repository; 
+import com.luxury_sales.ms_usuario.model.Usuario; 
+import org.springframework.data.jpa.repository.JpaRepository;  
+import org.springframework.stereotype.Repository; 
 
-import com.luxury_sales.ms_usuario.model.Usuario; //importamos la clase "usuario" para que el repositorio sepa que guardar.
-import org.springframework.data.jpa.repository.JpaRepository; // importammos la herramienta spring para base de datos. 
-import org.springframework.stereotype.Repository; // marcamos esta clase como repositorio 
-
-@Repository // esta linea le dice a spring : este archivo maneja la base de datos.
+@Repository 
 
 public interface usuarioRepository  extends JpaRepository<Usuario, Long >{
 
-    // "extends JpaRepository" es lo que te falta. 
-    // Le estamos diciendo que use la tabla 'usuario' y que su ID es de tipo 'Long'.
-
-
+    
 }
