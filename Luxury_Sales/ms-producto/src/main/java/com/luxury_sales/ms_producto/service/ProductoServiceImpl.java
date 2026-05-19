@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 @Service
 public class ProductoServiceImpl implements ProductoService {
@@ -18,18 +18,29 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public List<ProductoResponseDTO> obtenerTodos() {
-        return productoRepository.findAll().stream()
-                .map(p -> new ProductoResponseDTO(p.getId(), p.getNombre(), p.getPrecio(), p.getCantidad()))
-                .collect(Collectors.toList());
+        return null; 
     }
 
     @Override
-    public ProductoResponseDTO guardar(ProductoRequestDTO dto) {
-        // Convertir RequestDTO a Entidad
-        Producto producto = new Producto(dto.getNombre(), dto.getPrecio(), dto.getCantidad());
-        Producto guardado = productoRepository.save(producto);
+    public ProductoResponseDTO guardar(ProductoRequestDTO requestDTO) {
+        Producto producto = new Producto();
+        producto.setNombre(requestDTO.getNombre());
+        producto.setPrecio(requestDTO.getPrecio());
+        producto.setCantidad(requestDTO.getCantidad());
+
+        Producto productoGuardado = productoRepository.save(producto);
+
+        ProductoResponseDTO response = new ProductoResponseDTO();
+        response.setId(productoGuardado.getId());
+        response.setNombre(productoGuardado.getNombre());
+        response.setPrecio(productoGuardado.getPrecio());
+        response.setCantidad(productoGuardado.getCantidad());
         
-        // Convertir Entidad guardada a ResponseDTO
-        return new ProductoResponseDTO(guardado.getId(), guardado.getNombre(), guardado.getPrecio(), guardado.getCantidad());
+        return response;
+    }
+
+    @Override
+    public Optional<Producto> obtenerPorId(Long id) {
+        return productoRepository.findById(id);
     }
 }
