@@ -17,18 +17,24 @@ public class WebClientConfig {
     @Value("${app.urls.ms-pagos}")
     private String urlPagos;
 
-    @Bean
+    @Bean 
     public WebClient productoWebClient() {
-        return WebClient.builder().baseUrl(urlProducto).build();
+        return WebClient.builder()
+        .baseUrl(urlProducto)
+        .build();
     }
 
     @Bean
     public WebClient usuarioWebClient() {
-        return WebClient.builder().baseUrl(urlUsuario).build();
+        return WebClient.builder()
+        .baseUrl(urlUsuario)
+        .build();
     }
 
     @Bean
     public WebClient pagosWebClient() {
-        return WebClient.builder().baseUrl(urlPagos).build();
+        return WebClient.builder()
+        .baseUrl(urlPagos)
+        .build();
     }
 }

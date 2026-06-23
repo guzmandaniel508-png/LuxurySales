@@ -11,14 +11,14 @@ public class Producto {
     private Long id;
 
     private String nombre;
-    private String precio;
+    private double precio;
     private Integer cantidad;
 
   
     public Producto() {}
 
 
-    public Producto(String nombre, String precio, Integer cantidad) {
+    public Producto(String nombre, double precio, Integer cantidad) {
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
@@ -28,8 +28,8 @@ public class Producto {
     public void setId(Long id) { this.id = id; }
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
-    public String getPrecio() { return precio; }
-    public void setPrecio(String precio) { this.precio = precio; }
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
     public Integer getCantidad() { return cantidad; }
     public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
 }

@@ -4,9 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.14</version>
-		<relativePath/> <!-- lookup parent from repository -->
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.15</version>
 	</parent>
 	<groupId>com.luxury_sales</groupId>
 	<artifactId>ms-usuario</artifactId>

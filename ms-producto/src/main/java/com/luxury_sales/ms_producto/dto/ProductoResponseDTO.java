@@ -7,6 +7,6 @@ public class ProductoResponseDTO {
     
     private Long id;        
     private String nombre; 
-    private String precio; 
+    private double precio; 
     private Integer cantidad; 
 }

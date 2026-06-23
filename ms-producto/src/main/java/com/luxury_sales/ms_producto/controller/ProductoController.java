@@ -2,21 +2,22 @@ package com.luxury_sales.ms_producto.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.luxury_sales.ms_producto.dto.ProductoRequestDTO;
 import com.luxury_sales.ms_producto.dto.ProductoResponseDTO;
 import com.luxury_sales.ms_producto.service.ProductoService;
+
+import lombok.RequiredArgsConstructor;
 
 import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/productos")
+@RequiredArgsConstructor
 public class ProductoController {
 
-    @Autowired
-    private ProductoService productoService;
+    private final ProductoService productoService;
 
     @GetMapping
     public ResponseEntity<List<ProductoResponseDTO>> obtenerTodos() {

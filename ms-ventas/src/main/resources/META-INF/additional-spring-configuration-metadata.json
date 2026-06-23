@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "app.urls.ms-producto",
+    "type": "java.lang.String",
+    "description": "A description for 'app.urls.ms-producto'"
+  },
+  {
+    "name": "app.urls.ms-pagos",
+    "type": "java.lang.String",
+    "description": "A description for 'app.urls.ms-pagos'"
+  },
+  {
+    "name": "app.urls.ms-usuario",
+    "type": "java.lang.String",
+    "description": "A description for 'app.urls.ms-usuario'"
+  }
+]}

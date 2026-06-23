@@ -9,7 +9,7 @@ public class VentaResponseDTO {
     private Long productoId;
     private Long usuarioId;
     private Integer cantidad;
-    private String total;
+    private Double total;
     private String estadoPago;
     private LocalDateTime fechaVenta;
     private String mensaje;

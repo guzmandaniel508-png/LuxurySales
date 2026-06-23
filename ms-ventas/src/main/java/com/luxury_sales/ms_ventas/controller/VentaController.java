@@ -1,6 +1,6 @@
 package com.luxury_sales.ms_ventas.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,16 +8,17 @@ import org.springframework.web.bind.annotation.*;
 import com.luxury_sales.ms_ventas.dto.VentaRequestDTO;
 import com.luxury_sales.ms_ventas.dto.VentaResponseDTO;
 import com.luxury_sales.ms_ventas.service.VentaService;
+import lombok.RequiredArgsConstructor;
 
 import jakarta.validation.Valid;
 import java.util.List;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/ventas")
 public class VentaController {
 
-    @Autowired
-    private VentaService ventaService;
+    private final VentaService ventaService;
 
     @GetMapping
     public ResponseEntity<List<VentaResponseDTO>> obtenerTodas() {
